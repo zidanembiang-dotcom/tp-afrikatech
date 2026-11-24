@@ -1,0 +1,19 @@
+name: Verification du site AfriShop # Nom du workflow
+on: # Evenements declencheurs
+  push: # Apres un push
+    branches: [main] # Branche surveillee
+  workflow_dispatch: # Lancement manuel
+jobs: # Liste des travaux
+  verification: # Identifiant du job
+    runs-on: ubuntu-latest # Machine distante Linux
+    steps: # Etapes successives
+      - name: Recuperer le code
+        uses: actions/checkout@v4 # Copie le depot
+      - name: Afficher les fichiers
+        run: ls -la # Liste les fichiers
+      - name: Verifier le HTML
+        run: test -f index.html # Verifie son existence
+      - name: Verifier le CSS
+        run: test -f style.css # Verifie son existence
+      - name: Confirmation
+        run: echo "Verification reussie" # Message final
