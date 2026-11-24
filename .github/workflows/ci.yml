@@ -14,6 +14,6 @@ jobs: # Liste des travaux
       - name: Verifier le HTML
         run: test -f index.html # Verifie son existence
       - name: Verifier le CSS
-        run: test -f style.css # Verifie son existence
+        run: test -f styles.css # Verifie son existence
       - name: Confirmation
         run: echo "Verification reussie" # Message final
