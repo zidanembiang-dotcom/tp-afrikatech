@@ -1,0 +1,26 @@
+[1mdiff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..19fac70[m
+[1m--- /dev/null[m
+[1m+++ b/.github/workflows/ci.yml[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32mname: Verification du site AfriShop # Nom du workflow[m
+[32m+[m[32mon: # Evenements declencheurs[m
+[32m+[m[32m  push: # Apres un push[m
+[32m+[m[32m    branches: [main] # Branche surveillee[m
+[32m+[m[32m  workflow_dispatch: # Lancement manuel[m
+[32m+[m[32mjobs: # Liste des travaux[m
+[32m+[m[32m  verification: # Identifiant du job[m
+[32m+[m[32m    runs-on: ubuntu-latest # Machine distante Linux[m
+[32m+[m[32m    steps: # Etapes successives[m
+[32m+[m[32m      - name: Recuperer le code[m
+[32m+[m[32m        uses: actions/checkout@v4 # Copie le depot[m
+[32m+[m[32m      - name: Afficher les fichiers[m
+[32m+[m[32m        run: ls -la # Liste les fichiers[m
+[32m+[m[32m      - name: Verifier le HTML[m
+[32m+[m[32m        run: test -f index.html # Verifie son existence[m
+[32m+[m[32m      - name: Verifier le CSS[m
+[32m+[m[32m        run: test -f style.css # Verifie son existence[m
+[32m+[m[32m      - name: Confirmation[m
+[32m+[m[32m        run: echo "Verification reussie" # Message final[m
+\ No newline at end of file[m
