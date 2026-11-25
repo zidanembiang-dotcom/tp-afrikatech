@@ -2,5 +2,5 @@ services:
   web:                 # Nom du service
     build: .           # Construire depuis le Dockerfiles
     ports:
-      - "127.0.0.1:8080:80"  # Port local : port interne
-    restart: unless-stopped  # Redémarrage automatique
+      - "127.0.0.1:8081:80"  # Port local : port interne
+    restart: unless-stopped  # Redémarrage automatiques
